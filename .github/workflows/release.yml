@@ -21,6 +21,8 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install ansible-core
+          
       - name: release
         run: |
+          sed -i '/^[[:space:]]*namespace:/d' meta/main.yml
           ansible-galaxy role import --api-key ${{ secrets.galaxy_api_key }} $(echo $GITHUB_REPOSITORY | cut -d/ -f1) $(echo $GITHUB_REPOSITORY | cut -d/ -f2) -vvvv
