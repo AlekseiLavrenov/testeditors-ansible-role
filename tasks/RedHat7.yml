@@ -1,0 +1,17 @@
+---
+  - name: Add onlyoffice repo
+    ansible.legacy.yum:
+      name: "{{ onlyoffice_repo }}"
+    become: yes
+
+  - name: Install epel repo
+    ansible.legacy.yum: 
+      name: epel-release
+    become: yes
+
+  - name: Install desktopeditors
+    ansible.legacy.yum:
+      name: "{{ package_name }}"
+      update_cache: yes
+      state: present
+    become: yes
