@@ -73,4 +73,5 @@ jobs:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
           MOLECULE_DISTRO: ${{ matrix.distro }}
-          ANSIBLE_LINT_SKIP_LIST: role-name
+          ANSIBLE_SKIP_LIST: role-name
+          
