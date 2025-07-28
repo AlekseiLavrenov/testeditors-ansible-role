@@ -1,0 +1,1 @@
+# testeditors-ansible-role
